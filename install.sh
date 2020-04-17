@@ -10,8 +10,12 @@ adduser -S gkh gkh
 apk update
 apk --no-cache add ca-certificates gnupg mysql-client openssl
 
-# install cloud_sql_proxy & kubectl
-gcloud components install -q beta cloud_sql_proxy kubectl
+# install cloud_sql_proxy
+gcloud components install -q beta cloud_sql_proxy
+
+# install kubectl
+wget -q -O "/usr/local/bin/kubectl" "https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
+chmod +x /usr/local/bin/kubectl
 
 # install helm
 curl --silent --show-error --fail --location --output get_helm.sh https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get
