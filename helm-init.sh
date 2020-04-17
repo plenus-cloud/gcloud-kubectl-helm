@@ -10,3 +10,4 @@ else
 fi
 
 helm plugin install https://github.com/futuresimple/helm-secrets.git
+helm plugin install https://github.com/hayorov/helm-gcs
